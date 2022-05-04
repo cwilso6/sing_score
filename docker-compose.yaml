@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  score-tumor:
+    container_name: score-tumor-container
+    build: . 
+    restart: always
+    user: 'root'
+    command: ["R", "-e", "source('/app/main.R')"]
+    volumes:
+      - './main.R:/app/main.R'
